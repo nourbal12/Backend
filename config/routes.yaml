@@ -1,0 +1,63 @@
+# This file is the entry point to configure your own HTTP routes.
+# Files in the routes/ subdirectory configure the routes for your dependencies.
+
+#index:
+#    path: /
+#    defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+article_list:
+    path: /api/v1/articles
+    controller: App\Controller\ArticleController:indexAction
+    methods: [GET]
+
+article_create:
+    path: /api/v1/articles
+    controller: App\Controller\ArticleController:createAction
+    methods: [POST]
+
+article_update:
+    path: /api/v1/articles/{id}
+    controller: App\Controller\ArticleController:updateAction
+    methods: [PUT]
+
+article_delete:
+    path: /api/v1/articles/{id}
+    controller: App\Controller\ArticleController:deleteAction
+    methods: [DELETE]
+
+article_get:
+    path: /api/v1/articles/{id}
+    controller: App\Controller\ArticleController:getarticleAction
+    methods: [GET]
+
+
+article_register:
+    path: /api/v1/register
+    controller: App\Controller\UserController:registerAction
+    methods: [POST]
+
+article_login:
+    path: /api/v1/login
+    controller: App\Controller\UserController:loginAction
+    methods: [POST]
+
+article_evaluation_create:
+    path: /api/v1/article_evaluation
+    controller: App\Controller\ArticleEvaluationController:createAction
+    methods: [POST]
+
+article_evaluation_get_by_article_and_user:
+    path: /api/v1/article_evaluation/a/{userId}/{articleId}
+    controller: App\Controller\ArticleEvaluationController:getEvaluationAction
+    methods: [GET]
+
+    
+article_evaluation_get_by_article_and_evaluation:
+    path: /api/v1/article_evaluation/b/{articleId}/{eval}
+    controller: App\Controller\ArticleEvaluationController:getEvaluationByArticleIdAndEvaluationValueAction
+    methods: [GET]
+
+user_get_one:
+    path: /api/v1/user/{id}
+    controller: App\Controller\UserController:getUserByIdAction
+    methods: [GET]
