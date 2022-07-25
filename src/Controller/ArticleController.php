@@ -30,7 +30,7 @@ class ArticleController extends AbstractApiController {
         $article->setTitle($req->title);
         $article->setContent($req->content);
         $article->setAuthor($req->author);
-        $article->setAuthorId($req->author_id);
+        $article->setAuthorId($req->authorId);
         $article->setUpvote($req->upvote);
         $article->setDownvote($req->downvote);
 
